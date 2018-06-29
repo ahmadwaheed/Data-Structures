@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)http://epaperpress.com/sortsearch/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Sorting and Searching Algorithms</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="./Sorting and Searching Algorithms_files/format.css" type="text/css">
+<link rel="stylesheet" href="./Sorting and Searching Algorithms_files/formatFF.css" type="text/css">
+<link rel="stylesheet" href="./Sorting and Searching Algorithms_files/menu.css" type="text/css">
+
+<script type="text/javascript" src="./Sorting and Searching Algorithms_files/menu.js"></script>
+<script type="text/javascript">
+var myMenu;
+function preLoad() {
+  myMenu = new SDMenu("sort_menu");
+  myMenu.init();
+  
+  epp = new Image
+  epp.src = '../images/epp_over.gif'
+}
+</script>
+<meta name="description" content="Algorithms for sorting and searching including shell sort, quicksort, qsort, binary tree, red-black tree, hash table, skip list, and external sort">
+</head>
+<body onload="preLoad();">
+<div id="wrapper">
+  <div id="navbar">
+        <img src="./Sorting and Searching Algorithms_files/spacer.gif" width="20" height="40" alt="">
+    <div align="center">
+	  <a href="http://epaperpress.com/index.html" target="_top" onmouseout="epp.src=&#39;../images/epp.gif&#39;" onmouseover="epp.src=&#39;../images/epp_over.gif&#39;" onmousedown="epp.src=&#39;../images/epp_down.gif&#39;">
+<img id="epp" src="./Sorting and Searching Algorithms_files/epp.gif" width="59" height="27" alt=""></a>
+    </div>
+    <blockquote>
+	<div class="center">
+      <input type="button" value="+" onclick="myMenu.expandAll();">
+      <input type="button" value="–" onclick="myMenu.collapseAll();">
+	</div>
+    <img src="./Sorting and Searching Algorithms_files/spacer.gif" width="20" height="5" alt="">
+    <div id="sort_menu" class="sdmenu">
+      <div>
+  		<span>Menu</span>
+        <a href="./Sorting and Searching Algorithms_files/Sorting and Searching Algorithms.html" class="current">Introduction</a>
+        <a href="http://epaperpress.com/sortsearch/bib.html">Bibliography</a>
+      </div>
+      <div>
+        <span>Basics</span>
+        <a href="http://epaperpress.com/sortsearch/arr.html">Arrays</a>
+        <a href="http://epaperpress.com/sortsearch/lnk.html">Linked Lists</a>
+        <a href="http://epaperpress.com/sortsearch/tim.html">Timing Estimates</a>
+        <a href="http://epaperpress.com/sortsearch/sum.html">Summary</a>
+      </div>
+      <div>
+        <span>Sorting</span>
+        <a href="http://epaperpress.com/sortsearch/ins.html">Insertion Sort</a>
+        <a href="http://epaperpress.com/sortsearch/shl.html">Shell Sort</a>
+        <a href="http://epaperpress.com/sortsearch/qui.html">Quick Sort</a>
+        <a href="http://epaperpress.com/sortsearch/cm1.html">Comparison</a>
+        <a href="http://epaperpress.com/sortsearch/ext.html">External Sorts</a>
+      </div>
+      <div>
+        <span>Dictionaries</span>
+        <a href="http://epaperpress.com/sortsearch/has.html">Hash Tables</a>
+        <a href="http://epaperpress.com/sortsearch/bin.html">Binary Trees</a>
+        <a href="http://epaperpress.com/sortsearch/rbt.html">Red-Black Trees</a>
+        <a href="http://epaperpress.com/sortsearch/skl.html">Skip Lists</a>
+        <a href="http://epaperpress.com/sortsearch/cm2.html">Comparison</a>
+      </div>
+    </div>
+    </blockquote>
+  </div> <!-- id=navbar -->
+  <div id="content">
+    <h1>Sorting and Searching Algorithms</h1>
+    <!--
+    <p>
+    <table>
+      <tr>
+        <th class="center">InsertSort
+        <th class="center">ShellSort
+        <th class="center">QuickSort
+      <tr>
+     <td><table style="border:2px solid blue">
+       <tr>
+          <td><applet code=SortItem.class width=100 height=100>
+              <param name="alg" value="Insert">
+                  To view this applet you must enable or <a target="_blank" href="http://www.java.com">install Java</a> on your computer.
+              </applet>
+          </td></tr></table>
+        <td><table style="border:2px solid blue">
+            <tr>
+              <td><applet code=SortItem.class width=100 height=100>
+                  <param name="alg" value="Shell">
+                </applet>
+          </td></tr></table>
+        <td><table style="border:2px solid blue">
+            <tr>
+              <td><applet code=SortItem.class width=100 height=100>
+                  <param name="alg" value="QSort">
+                  <param name="pause" value="200">
+                </applet>
+          </td></tr></table>
+        </tr>
+    </table>
+    -->
+    <p>
+    </p><table>
+      <tbody><tr>
+        <td><a href="http://epaperpress.com/sortsearchRussian/index.html" target="_top"><img src="./Sorting and Searching Algorithms_files/c_russ.gif" width="73" height="25" alt=""></a> </td>
+        <td><a href="http://epaperpress.com/sortsearchItalian/index.html" target="_top"><img src="./Sorting and Searching Algorithms_files/c_ital.gif" width="73" height="25" alt=""></a> </td>
+        <td><a href="http://epaperpress.com/sortsearchFrench/index.html" target="_top"><img src="./Sorting and Searching Algorithms_files/c_french.gif" width="73" height="25" alt=""></a> </td>
+      </tr>
+    </tbody></table>
+    <p> This is a collection of algorithms for sorting and searching. 
+      Descriptions are brief and intuitive, with just enough theory thrown in to make you nervous. 
+      I assume you know a high-level language, such as C, and that you are familiar with programming 
+      concepts including arrays and pointers.
+    </p><p> The first section introduces basic data structures and notation. The next section presents 
+      several <i>sorting</i> algorithms. This is followed by a section on <i>dictionaries</i>, structures 
+      that allow efficient <i>insert</i>, <i>search</i>, and <i>delete</i> operations. The last section 
+      describes algorithms that sort data and implement dictionaries for very large files. Source 
+      code for each algorithm, in ANSI C, is included.
+    </p><p>Most algorithms have also been coded in Visual Basic. If you are programming
+      in Visual Basic, I recommend you read <a href="http://epaperpress.com/vbhash/index.html" target="_blank">Visual
+      Basic Collections
+      and Hash Tables</a>, for an explanation of hashing and node representation. A
+      search for Algorithms at amazon.com returned over 18,000 entries. Here is one
+      of the best.
+    </p><blockquote>
+      <table>
+        <tbody><tr>
+          <td><a href="http://www.amazon.com/dp/0262033844/?tag=none01" target="_blank">
+              <img src="./Sorting and Searching Algorithms_files/b_cormen_big.jpg" width="184" height="212" alt=""></a></td>
+          <td class="top" style="padding:5px;">
+              <a href="http://www.amazon.com/dp/0262033844/?tag=none01" target="_blank">Introduction to Algorithms</a><br>
+            by Thomas H. Cormen<br>
+            <br>
+            A graduate-level discussion of algorithms that also works for the mathematically
+            challenged.</td>
+        </tr>
+      </tbody></table>
+    </blockquote>
+    <p>For additional references see the <a href="http://epaperpress.com/sortsearch/bib.html">bibliography</a>. If
+      you are interested in translating this document to another language, please
+      send me email. Special thanks go to Pavel Dubner, whose numerous suggestions
+      were
+      much appreciated. Right-click on the following links for additional downloads: </p>
+    <ul>
+      <li><a href="http://epaperpress.com/sortsearch/download/sortsearch.pdf" target="_blank">PDF document</a>
+      </li><li><a href="http://epaperpress.com/sortsearch/download/code.zip">source code (C)</a>
+      </li><li><a href="http://epaperpress.com/sortsearch/download/codev.zip">source code (Visual Basic)</a>
+    </li></ul>
+    <p> Permission to reproduce portions of this document is given provided the web
+      site listed  below is referenced, and no additional restrictions apply. Source
+      code, when part of a software 
+      project, may be used freely without reference to the author.
+    </p><p> <a href="http://epaperpress.com/whoami/index.html" target="_blank">Tom Niemann</a><br>
+      Portland, Oregon<br>
+      <a href="http://epaperpress.com/" target="_top">epaperpress.com</a>
+    </p><p> <a href="http://www.adobe.com/products/acrobat/readstep2.html" target="_blank"><img src="./Sorting and Searching Algorithms_files/c_acro.gif" width="88" height="31" alt=""></a> 
+  </p></div>
+</div>
+
+
+</body></html>

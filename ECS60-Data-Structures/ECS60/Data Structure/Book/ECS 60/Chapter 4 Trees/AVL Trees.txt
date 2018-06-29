@@ -1,0 +1,122 @@
+   struct AvlNode
+  {
+  Comparable element;
+  AvlNode *left;
+  AvlNode *right;
+  int height;
+
+  AvlNode( const Comparable & ele, AvlNode *lt, AvlNode *rt, int  = 0 ) : element{ ele }, left{ lt }, right{ rt }, height{ h } { }
+  AvlNode( Comparable && ele, AvlNode *lt, AvlNode *rt, int h = 0 ) : element{ std::move( ele ) }, left{ lt }, right{ rt }, height{ h } { }
+  }; 
+   Node declaration for AVL trees
+
+
+
+/* Return the height of node t or -1 if nullptr */
+ 
+int height( AvlNode *t ) const
+ {
+  return t == nullptr ? -1 : t->height;
+ }
+
+Figure 4.41 Function to compute height of an AVL node
+
+/**
+2 * Internal method to insert into a subtree.
+3 * x is the item to insert.
+4 * t is the node that roots the subtree.
+5 * Set the new root of the subtree.
+6 */
+7 void insert( const Comparable & x, AvlNode * & t )
+8 {
+9 if( t == nullptr )
+10 t = new AvlNode{ x, nullptr, nullptr };
+11 else if( x < t->element )
+12 insert( x, t->left );
+13 else if( t->element < x )
+14 insert( x, t->right );
+15
+16 balance( t );
+17 }
+18
+19 static const int ALLOWED_IMBALANCE = 1;
+20
+21 // Assume t is balanced or within one of being balanced
+22 void balance( AvlNode * & t )
+23 {
+24 if( t == nullptr )
+25 return;
+26
+27 if( height( t->left ) - height( t->right ) > ALLOWED_IMBALANCE )
+28 if( height( t->left->left ) >= height( t->left->right ) )
+29 rotateWithLeftChild( t );
+30 else
+31 doubleWithLeftChild( t );
+32 else
+33 if( height( t->right ) - height( t->left ) > ALLOWED_IMBALANCE )
+34 if( height( t->right->right ) >= height( t->right->left ) )
+35 rotateWithRightChild( t );
+36 else
+37 doubleWithRightChild( t );
+38
+39 t->height = max( height( t->left ), height( t->right ) ) + 1;
+40 }
+Figure 4.42 Insertion into an AVL tree
+
+/**
+2 * Rotate binary tree node with left child.
+3 * For AVL trees, this is a single rotation for case 1.
+4 * Update heights, then set new root.
+5 */
+6 void rotateWithLeftChild( AvlNode * & k2 )
+7 {
+8 AvlNode *k1 = k2->left;
+9 k2->left = k1->right;
+10 k1->right = k2;
+11 k2->height = max( height( k2->left ), height( k2->right ) ) + 1;
+12 k1->height = max( height( k1->left ), k2->height ) + 1;
+13 k2 = k1;
+14 }
+Figure 4.44 Routine to perform single rotation
+
+/**
+2 * Double rotate binary tree node: first left child
+3 * with its right child; then node k3 with new left child.
+4 * For AVL trees, this is a double rotation for case 2.
+5 * Update heights, then set new root.
+6 */
+7 void doubleWithLeftChild( AvlNode * & k3 )
+8 {
+9 rotateWithRightChild( k3->left );
+10 rotateWithLeftChild( k3 );
+11 }
+Figure 4.46 Routine to perform double rotation
+1 /**
+2 * Internal method to remove from a subtree.
+3 * x is the item to remove.
+4 * t is the node that roots the subtree.
+5 * Set the new root of the subtree.
+6 */
+7 void remove( const Comparable & x, AvlNode * & t )
+8 {
+9 if( t == nullptr )
+10 return; // Item not found; do nothing
+11
+12 if( x < t->element )
+13 remove( x, t->left );
+14 else if( t->element < x )
+15 remove( x, t->right );
+16 else if( t->left != nullptr && t->right != nullptr ) // Two children
+17 {
+18 t->element = findMin( t->right )->element;
+19 remove( t->element, t->right );
+20 }
+21 else
+22 {
+23 AvlNode *oldNode = t;
+24 t = ( t->left != nullptr ) ? t->left : t->right;
+25 delete oldNode;
+26 }
+27
+28 balance( t );
+29 }

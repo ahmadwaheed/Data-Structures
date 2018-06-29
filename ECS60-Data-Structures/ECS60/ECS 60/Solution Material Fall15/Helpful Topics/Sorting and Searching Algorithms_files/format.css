@@ -1,0 +1,38 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:600,400,400italic);
+body { font-family: "Open Sans", sans-serif; font-weight: 400; font-size: 16px }
+h1 { font-family: "Open Sans", sans-serif; font-weight: 600; font-size: 32px; margin-bottom: 12px; margin-top: 20px  }
+h2 { font-family: "Open Sans", sans-serif; font-weight: 600; font-size: 24px; margin-bottom:-14px; margin-top: -5px }
+h3 { font-family: "Open Sans", sans-serif; font-weight: 600; font-size: 18px; margin-bottom:-16px; margin-top: -5px }
+
+code { font-family: "Courier New", monospace; font-weight:bold; font-size: 18px }
+pre.icode { font-family: "Courier New", monospace; font-weight:bold; font-size: 16px; margin-left:2em }
+pre { font-family: "Courier New", monospace; font-weight:bold; font-size: 16px }
+pre.code { font-family: "Courier New", monospace; font-weight:bold; font-size:16px }
+span.pi { font-family: "Times New Roman", Times, serif }
+span.bigoh { font-style: italic; font-weight: bold }
+ul { list-style: square }
+img { border: 0 }
+.left { text-align:left }
+.right { text-align:right }
+.center { text-align:center }
+.justify { text-align:justify }
+.bottom { vertical-align:bottom }
+.top { vertical-align:top }
+.middle { vertical-align: middle }
+.blue { color:#0000FF }
+table { border-collapse:collapse; }
+table.padding td { padding: 3px; }
+table.padding th { padding: 3px; }
+table.centerTable { margin-left: auto; margin-right: auto; }
+table.outline td { border:1px solid black; padding: 4px; }
+table.outline th { border:1px solid black; padding: 4px; }
+table.outlineWhite td { border:1px solid white; padding: 5px; }
+table.outlineWhite th { border:1px solid white; padding: 5px; }
+.schHead { background-color: #666666; color:#FFFFFF }
+.schDark { background-color: #e7e7e7; }
+.schLite { background-color: #ffffff; }
+.schPurp { background-color: #ccccff; }
+caption { caption-side: bottom; }
+img.border { border:1px solid black; }
+img.borderwhite {border:1px solid white; }
+li.doublespace { margin-bottom:1em; }

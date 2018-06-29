@@ -1,0 +1,64 @@
+Data Structures Tutorial:
+===============
+Structure Node
+{
+ contains the data types to work with;
+ A pointer to the next Node;
+int data;
+Node *next;
+}
+
+=========================
+Insert(int data,int index)
+{
+ Node *nodePtr;
+ Dynamically allocate the memory for Node
+ nodePtr = new Node();
+ Assigning values to data and assign next Node to a NULL pointer
+ nodePtr->data = data;
+ nodePtr->next = NULL;
+
+ if(index == 1) { 
+  we will set the link field of the newly created node as whatever
+  the existing head is and adjust the new variable equal to head
+  nodePtr->next = head;
+  head = nodePtr;
+  return; }
+  we need to go n-1 node initially, create one more node pointer    and run a loop which to n-2 numbers
+  Node *nodePtr2;
+  for(int i=0;i<n-2;i++)
+  { nodePtr2 = nodePtr2->next; }  this statements moves the      pointer node to the next node
+  nodePtr->next =  nodePtr2->next; length of n-1 node and the     length of newly created node are same
+  nodePtr2->next = nodePtr;  // n-1 node is equal to new     created node
+  }
+  
+====================
+Print()
+{
+ Node *nodePtr;
+
+while(nodePtr != NULL)
+ {
+ cout << nodePtr->data << " ";
+ nodePtr = nodePtr->next;
+ }
+}
+
+Delete(int index)
+======================
+make a pointer to the Node
+Node *nodePtr = head;
+
+this is the case in which the node we want to delete is first node
+if(index == 1){
+ head = nodePtr->next;   head now points to second node
+ delete nodePtr;
+ return; }
+
+A case in which there is a Node before the node we want to delete
+for(int i=0;i < index-2;i++)
+ nodePtr = nodePtr->next;// for all the nodes up to N nodePtr moves to next node
+Node *nodePtr1 = nodePtr->next;  // first node (nodePtr) pointing to next node, is equal to second node 
+nodePtr->next = nodePtr1->next;  //(n+1) Node
+delete nodePtr1;
+ 

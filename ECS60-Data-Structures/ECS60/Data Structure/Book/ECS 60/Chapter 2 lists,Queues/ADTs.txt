@@ -1,0 +1,2 @@
+Abstract Data Types(ADTs):
+             An ADT is a set of objects together with a set of operations. 

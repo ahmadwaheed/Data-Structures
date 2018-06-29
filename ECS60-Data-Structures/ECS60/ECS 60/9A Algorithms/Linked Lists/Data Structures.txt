@@ -1,0 +1,20 @@
+https://www.youtube.com/watch?v=92S4zgXN17o&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P
+
+REMOVE
+=====
+ListNode *nodePtr, *previousNodePtr;
+if(the list is empty)
+return;
+
+if(first->value == number)
+ make node pointer equal to head pointer
+ move to next head
+ delete nodePtr
+else
+ make node pointer equal to head node
+ while(nodePtr is not NULL and nodePtr->value is not equal to  number)
+  previousNodePtr = nodePtr;
+  nodePtr = nodePtr->next;
+ if(nodePtr)
+  previousNodePtr->next = nodePtr->next;
+  delete nodePtr;

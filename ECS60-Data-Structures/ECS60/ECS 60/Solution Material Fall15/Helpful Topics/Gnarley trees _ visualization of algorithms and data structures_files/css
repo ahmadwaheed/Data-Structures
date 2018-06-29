@@ -1,0 +1,32 @@
+/* latin */
+@font-face {
+  font-family: 'Puritan';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Puritan Regular'), local('Puritan-Regular'), url(http://fonts.gstatic.com/s/puritan/v8/bieeZMYsukNQLRZ-T0EyWQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Puritan';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Puritan Bold'), local('Puritan-Bold'), url(http://fonts.gstatic.com/s/puritan/v8/5jPLJ9f9Ab5G4ze71-FiQ_k_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Puritan';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Puritan Italic'), local('Puritan-Italic'), url(http://fonts.gstatic.com/s/puritan/v8/LNB5sZdDCuNlAjx55ZHq6FtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Puritan';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Puritan Bold Italic'), local('Puritan-BoldItalic'), url(http://fonts.gstatic.com/s/puritan/v8/rFG3XkMJL75nUNZwCEIJqOgdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}

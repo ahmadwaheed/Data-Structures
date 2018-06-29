@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!-- saved from url=(0048)http://www.cs.nyu.edu/algvis/java/SplayTree.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title> Splay Trees </title>
+</head><body>
+
+<p><table><tbody><tr>
+<td valign="top" nowrap="">
+
+<p><br>
+<b>Sections</b>
+
+</p><p>
+<a href="http://www.cs.nyu.edu/algvis/java/SplayTree.html#Summary">Summary</a><br>
+<a href="http://www.cs.nyu.edu/algvis/java/SplayTree.html#Operations">Operations</a><br>
+<a href="http://www.cs.nyu.edu/algvis/java/SplayTree.html#Splay">Splay</a><br>
+<a href="http://www.cs.nyu.edu/algvis/java/SplayTree.html#Rotations">Rotations</a><br>
+<a href="http://www.cs.nyu.edu/algvis/java/SplayTree.html#References">References</a><br>
+</p><p>
+<b>Visualize</b>
+<br>
+<a href="http://www.cs.nyu.edu/algvis/java/index.html">Tree Operations</a><br>
+</p><p>
+<b>Algorithm<br>
+   Visualization</b><br>
+<a href="http://www.cs.nyu.edu/algvis/index.html">Homepage</a>
+</p></td>
+<td align="left" width="40">
+</td>
+<td valign="top">
+
+<h2>Splay Trees</h2>
+
+<a name="Summary"></a><h3>Summary</h3>
+Splay Trees were invented by Sleator and Tarjan. This data structure
+is essentially a binary tree with special update and access rules. It
+ has the wonderful property to adapt optimally to a 
+sequence of tree operations.
+<p>
+
+</p><p>
+More precisely, a sequence of <em>m</em> operations
+on a tree with initially <em>n</em> nodes takes time 
+<em>O (n ln (n) + m ln (n))</em>.
+
+<!--
+<a name="Splay"></a><h3>Splay Operation</h3>
+
+<p>
+The most important tree operation is <b><tt>splay(x)</tt></b>, which
+moves an element <tt>x</tt> to the root of the tree. In case <tt>x</tt> 
+is not present in the tree, the last element on the search path for 
+<tt>x</tt> is moved instead.
+
+<p>
+The run time for a <tt>splay(x)</tt> operation is proportional to the
+length of the search path for <tt>x</tt>: While searching for <tt>x</tt> we
+traverse the search path top-down. Let <tt>y</tt> be the last node on that 
+path. In a second step, we move <tt>y</tt> along that path by applying 
+rotations as described <a HREF="#Rotations">later</a>.
+
+<p>
+The time complexity of maintaining a splay trees is analyzed using an
+<b>Amortized Analysis</b>. Consider a sequence of operations
+<em>op_1, op_2, ..., op_m</em>.
+Assume that our data structure has a potential. One can think of the potential
+as a bank account. Each tree operation <em>op_i</em> has actual costs 
+proportional to its running time. We're paying for the costs <tt>c_i</tt> 
+of <em>op_i</em> with its <b>amortized costs</b> <tt>a_i</tt>. The 
+difference between concrete and amortized costs is charged against the 
+potential of the data structure. This means that we're investing in the 
+potential if the amortized costs are higher that the actual costs, otherwise 
+we're decreasing the potential.</b>
+
+<p>
+Thus, we're paying for the sequence <tt>c_1 + c_2 + ... + c_m </tt> no more
+than the initial potential plus the sum of the amortized costs <tt>a_1 +
+a_2 + ... + a_m</tt>.
+<p>
+The trick of the analysis is to define a potential function and to show that
+each splay operation has amortized costs <em>O (ln (n))</em>.
+<p>
+<h4>Example</h4>
+The examples illustrate a splay operation on a leaf node in a complete binary 
+tree and a splay operation on tree in form of a linear list. Observe how each 
+tree is changing while the splayed element is rotated to the root.
+<p>
+<applet codebase = "classes/" code="Splay1.class" width = 370 height = 300></applet>
+<p>
+<applet codebase = "classes/" code="Splay2.class" width = 370 height = 300></applet>
+-->
+
+<a name="Operations"></a></p><h3>Operations</h3>
+<p>
+Splay trees support the following operations. We write <tt>S</tt> for
+sets, <tt>x</tt> for elements and <tt>k</tt> for key values.
+<table>
+<tbody><tr>
+<td valign="top"><tt>splay(S,k)</tt></td>
+<td>returns an access to an element <tt>x</tt> with key <tt>k</tt> 
+in the set <tt>S</tt>. In case no such element exists, we return an
+access to the next smaller or larger element.
+</td>
+</tr>
+
+<tr>
+<td valign="top"><tt>split(S,k)</tt></td>
+<td>returns <tt>(S_1,S_2)</tt>, where for each <tt>x</tt> in <tt>S_1</tt>
+holds: <tt>key[x] &lt;= k </tt>, and for each <tt>y</tt> in <tt>S_2</tt> 
+holds: <tt>k &lt; key[y] </tt>.
+</td></tr>
+
+<tr>
+<td valign="top"><tt>join(S_1,S_2)</tt></td>
+<td> returns the union <tt>S = S_1 + S_2</tt>. Condition:
+for each <tt>x</tt> in <tt>S_1</tt> and each <tt>y</tt> in <tt>S_2</tt>:
+<tt>x &lt;= y</tt>.
+</td></tr>
+
+<tr>
+<td valign="top"><tt>insert(S,x)</tt></td>
+<td>augments <tt>S</tt> by <tt>x</tt>.
+</td></tr>
+
+<tr>
+<td valign="top"><tt>delete(S,x)</tt></td>
+<td>removes <tt>x</tt> from <tt>S</tt>.
+</td></tr>
+
+</tbody></table>
+
+</p><p>
+Each <tt>split, join, delete </tt> and <tt>insert</tt> operation 
+can be reduced to <tt>splay</tt> operations and modifications of the 
+tree at the root which take only constant time. Thus, the
+run time for each operation is essentially the same as for a <tt>splay</tt>
+operation.
+<a name="Splay"></a></p><h3>Splay Operation</h3>
+
+<p>
+The most important tree operation is <b><tt>splay(x)</tt></b>, which
+moves an element <tt>x</tt> to the root of the tree. In case <tt>x</tt> 
+is not present in the tree, the last element on the search path for 
+<tt>x</tt> is moved instead.
+
+</p><p>
+The run time for a <tt>splay(x)</tt> operation is proportional to the
+length of the search path for <tt>x</tt>: While searching for <tt>x</tt> we
+traverse the search path top-down. Let <tt>y</tt> be the last node on that 
+path. In a second step, we move <tt>y</tt> along that path by applying 
+rotations as described <a href="http://www.cs.nyu.edu/algvis/java/SplayTree.html#Rotations">later</a>.
+
+</p><p>
+The time complexity of maintaining a splay trees is analyzed using an
+<b>Amortized Analysis</b>. Consider a sequence of operations
+<em>op_1, op_2, ..., op_m</em>.
+Assume that our data structure has a potential. One can think of the potential
+as a bank account. Each tree operation <em> op_i </em> has actual costs 
+proportional to its running time. We're paying for the costs <em>c_i</em> 
+of <em> op_i </em> with its <b>amortized costs</b> <em>a_i</em>. The 
+difference between concrete and amortized costs is charged against the 
+potential of the data structure. This means that we're investing in the 
+potential if the amortized costs are higher that the actual costs, otherwise 
+we're decreasing the potential.
+
+</p><p>
+Thus, we're paying for the sequence <em> op_1, op_2, ..., op_m </em> no more
+than the initial potential plus the sum of the amortized costs <em> a_1 +
+a_2 + ... + a_m</em>.
+</p><p>
+The trick of the analysis is to define a potential function and to show that
+each splay operation has amortized costs <em> O (ln (n))</em>. It follows that
+the sequence has costs <em> O (m ln (n) + n ln (n)) </em>.
+</p><p>
+</p><h4>Example</h4>
+The examples illustrate a splay operation on a leaf node in a complete binary 
+tree and a splay operation on tree in form of a linear list. Observe how each 
+tree is changing while the splayed element is rotated to the root.
+<p>
+<applet codebase="classes/" code="Splay1.class" width="370" height="300"></applet>
+</p><p>
+<applet codebase="classes/" code="Splay2.class" width="370" height="300"></applet>
+
+<a name="Rotations"></a></p><h3>Rotations</h3>
+The <tt>splay</tt> operation moves the accessed element <tt>x</tt> to
+the root of the tree <tt>T</tt>. This is done using rotations on 
+<tt>x</tt> and parent <tt>y</tt> and grandparent <tt>z</tt>.
+
+<p>
+There are two kinds of <em>double</em> rotations and one
+<em>single</em> rotation. Due to symmetry, we need mirror-image versions of 
+each rotation.
+
+
+</p><p>
+<b>Type 1: </b>
+<tt>&nbsp;&nbsp; x &lt; y &lt; z </tt>, &nbsp; or
+<tt>&nbsp;&nbsp; z &lt; y &lt; x </tt>  &nbsp; respectively.<br>
+<br>
+<applet codebase="classes/" code="Main2.class" width="450" height="250">
+</applet>
+
+</p><p>
+<b>Type 2:</b> 
+<tt>&nbsp;&nbsp; y &lt; x &lt; z </tt>, &nbsp; or
+<tt>&nbsp;&nbsp; z &lt; x &lt; y </tt>  &nbsp; respectively.<br>
+<br>
+<applet codebase="classes/" code="Main3.class" width="450" height="250">
+</applet>
+
+</p><p>
+<b>Type 3:</b>
+The last case deals with the situation that the splay node <tt>x</tt> is
+a child of the root. Thus, we need a <em>single</em> rotation.
+</p><p>
+<tt>&nbsp;&nbsp; x &lt; y </tt>, &nbsp; or 
+<tt>&nbsp;&nbsp; y &lt; x </tt>  &nbsp; respectively.
+<br><br>
+<applet codebase="classes/" code="Main4.class" width="450" height="250">
+</applet>
+
+</p><h3><a name="References"></a>References</h3>
+[1] Data Structures and Their Algorithms, Lewis and Denenberg, Harper Collins, 1991, pp 243-251.<br>
+[2] "Self-adjusting Binary Search Trees", Sleator and Tarjan, JACM Volume 32, No 3, July 1985, pp 652-686.<br>
+[3] Data Structure and Algorithm Analysis, Mark Weiss, Benjamin Cummins, 1992, pp 119-130.<br>
+[4] Data Structures, Algorithms, and Performance, Derick Wood, Addison-Wesley, 1993, pp 367-375
+
+</td></tr></tbody></table>
+
+</p><hr>
+<p>
+</p><address>
+<small>
+Henning Biermann,
+<a href="mailto:biermann@cs.nyu.edu">biermann@cs.nyu.edu</a><br>
+Revised: February 25, 1998
+</small>
+</address>
+
+
+</body></html>

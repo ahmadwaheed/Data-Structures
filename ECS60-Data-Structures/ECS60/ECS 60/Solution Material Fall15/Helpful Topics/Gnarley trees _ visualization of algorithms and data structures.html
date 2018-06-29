@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)https://people.ksp.sk/~kuko/gnarley-trees/ -->
+<html dir="ltr" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+
+<meta name="description" content="Gnarley trees is a project focused on visualization of various tree data structures. It contains dozens of data structures, from balanced trees and priority queues to union find and stringology.">
+
+<meta name="og:description" content="Gnarley trees is a project focused on visualization of various tree data structures. It contains dozens of data structures, from balanced trees and priority queues to union find and stringology.">
+<meta property="og:image" content="http://people.ksp.sk/~kuko/img/gnarley-sqr.png">
+
+<script type="text/x-mathjax-config;executed=true">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+  "HTML-CSS": {minScaleAdjust: 100},
+  TeX: { Macros: { lg: "\\mathop{\\mathrm{lg}}" } },
+  messageStyle: "none",
+});
+MathJax.Hub.Queue(function () {
+  side_matter.placeNotes();
+});
+</script>
+<script type="text/javascript" src="./Gnarley trees _ visualization of algorithms and data structures_files/MathJax.js"></script>
+<script type="text/javascript" src="./Gnarley trees _ visualization of algorithms and data structures_files/ligature.js"></script>
+
+<!--? /*  TEMPORARY VYBER FONTOV */ ?-->
+<!--link
+href="http://fonts.googleapis.com/css?family=Cardo:400,400italic,700&amp;subset=latin,greek,latin-ext"
+rel="stylesheet" type="text/css">
+<link
+href="http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy:400,400italic|Buenard:400,700|EB+Garamond|Alegreya:400italic,700italic,400,700|Cardo:400,400italic,700"
+rel="stylesheet" type="text/css">
+<link
+href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy:400,400italic&subset=latin,latin-ext'
+rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Buenard:400,700&subset=latin,latin-ext'
+rel='stylesheet' type='text/css'>
+<link
+href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,greek,latin-ext'
+rel='stylesheet' type='text/css'>
+<link
+href="http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy:400,400italic|Buenard:400,700|EB+Garamond|Alegreya:400italic,700italic,400,700|Cardo:400,400italic,700"
+rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Puritan:400,700,400italic,700italic"
+rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Cardo:400,400italic,700&amp;subset=latin,greek"
+rel="stylesheet" type="text/css"-->
+<!--? /*  TEMPORARY VYBER FONTOV */ ?-->
+
+<title>Gnarley trees | visualization of algorithms and data structures</title>
+<link href="./Gnarley trees _ visualization of algorithms and data structures_files/css" rel="stylesheet" type="text/css">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="stylesheet" type="text/css" media="all" href="./Gnarley trees _ visualization of algorithms and data structures_files/style.css">
+<!--?
+    if (is_user_logged_in()) { ?-->
+        <style type="text/css">
+            .todo        { display: block; }
+            .todo:before { content: "TODO:"; font-weight: bold; font-size: small; }
+        </style>
+<!--?  }
+
+    if ($ismobile) { ?-->
+        <!--link rel="stylesheet" type="text/css" media="all" href="mobile.css" /-->
+        <style type="text/css">
+            /* body, div, table, tr, form, .main, #wrapper {
+                clear:both;
+                display:block;
+                 width:100%!important;
+                float:none;
+                margin:0!important;
+                padding:0;
+                -webkit-text-size-adjust: none; 
+            } */
+            #main {
+                padding: 40px 0 0 0;
+                margin-left: 20px!important;
+            }
+        </style>
+
+<!--?  }   ?-->
+<link rel="pingback" href="http://people.ksp.sk/~kuko/gnarley-trees/xmlrpc.php">
+<link rel="alternate" type="application/rss+xml" title="Gnarley trees » Feed" href="https://people.ksp.sk/~kuko/gnarley-trees/?feed=rss2">
+<link rel="alternate" type="application/rss+xml" title="Gnarley trees » Comments Feed" href="https://people.ksp.sk/~kuko/gnarley-trees/?feed=comments-rss2">
+<link rel="alternate" type="application/rss+xml" title="Gnarley trees » Introduction Comments Feed" href="https://people.ksp.sk/~kuko/gnarley-trees/?feed=rss2&amp;page_id=5">
+<link rel="stylesheet" id="side-matter-css" href="./Gnarley trees _ visualization of algorithms and data structures_files/side-matter.css" type="text/css" media="all">
+<script type="text/javascript" src="./Gnarley trees _ visualization of algorithms and data structures_files/comment-reply.js"></script>
+<script type="text/javascript" src="./Gnarley trees _ visualization of algorithms and data structures_files/jquery.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://people.ksp.sk/~kuko/gnarley-trees/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://people.ksp.sk/~kuko/gnarley-trees/wp-includes/wlwmanifest.xml"> 
+<link rel="next" title="Ordered dictionaries" href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=7">
+<meta name="generator" content="WordPress 3.3.1">
+<link rel="canonical" href="./Gnarley trees _ visualization of algorithms and data structures_files/Gnarley trees _ visualization of algorithms and data structures.html">
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">.MathJax_Preview .MJXc-math {color: inherit!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXc-script {font-size: .8em}
+.MJXc-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXc-bold {font-weight: bold}
+.MJXc-italic {font-style: italic}
+.MJXc-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-largeop {font-size: 150%}
+.MJXc-largeop.MJXc-int {vertical-align: -.2em}
+.MJXc-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXc-display {display: block; text-align: center; margin: 1em 0}
+.MJXc-math span {display: inline-block}
+.MJXc-box {display: block!important; text-align: center}
+.MJXc-box:after {content: " "}
+.MJXc-rule {display: block!important; margin-top: .1em}
+.MJXc-char {display: block!important}
+.MJXc-mo {margin: 0 .15em}
+.MJXc-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXc-denom {display: inline-table!important; width: 100%}
+.MJXc-denom > * {display: table-row!important}
+.MJXc-surd {vertical-align: top}
+.MJXc-surd > * {display: block!important}
+.MJXc-script-box > *  {display: table!important; height: 50%}
+.MJXc-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXc-script-box > *:last-child > * {vertical-align: bottom}
+.MJXc-script-box > * > * > * {display: block!important}
+.MJXc-mphantom {visibility: hidden}
+.MJXc-munderover {display: inline-table!important}
+.MJXc-over {display: inline-block!important; text-align: center}
+.MJXc-over > * {display: block!important}
+.MJXc-munderover > * {display: table-row!important}
+.MJXc-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXc-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXc-mtr {display: table-row!important}
+.MJXc-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXc-mtr > .MJXc-mtd:first-child {padding-left: 0}
+.MJXc-mtr:first-child > .MJXc-mtd {padding-top: 0}
+.MJXc-mlabeledtr {display: table-row!important}
+.MJXc-mlabeledtr > .MJXc-mtd:first-child {padding-left: 0}
+.MJXc-mlabeledtr:first-child > .MJXc-mtd {padding-top: 0}
+.MJXc-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXc-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXc-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXc-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXc-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXc-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXc-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXc-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXc-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXc-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXc-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_CHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+
+<body class="home page page-id-5 page-template-default" onload="ligature();"><div id="MathJax_Message" style="display: none;"></div>
+<div id="wrapper" class="hfeed">
+	<div id="header">
+		<div id="masthead">
+			<div id="branding" role="banner">
+										<!--img src="https://people.ksp.sk/~kuko/gnarley-trees/wp-content/themes/gnarley/images/headers/path.jpg" width="940" height="198" alt="" /-->
+						<img src="./Gnarley trees _ visualization of algorithms and data structures_files/banner.png" width="900" height="185" alt="">
+								</div><!-- #branding -->
+
+			<div id="access" role="navigation" style="height: 38px; overflow:visible;">
+			  				<div class="skip-link screen-reader-text"><a href="https://people.ksp.sk/~kuko/gnarley-trees/#content" title="Skip to content">Skip to content</a></div>
+				                                <!--iframe frameborder="0" scrolling="no" id="menu" style="height: 1000px;"
+                                src="< ?php echo
+                                get_bloginfo('template_directory');?>/menu.php"></iframe-->
+                                <div class="menu-header"><ul id="menu-main-menu" class="menu"><li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-5 current_page_item menu-item-23 short-menu"><a href="./Gnarley trees _ visualization of algorithms and data structures_files/Gnarley trees _ visualization of algorithms and data structures.html">Introduction</a></li>
+<li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22 long-menu"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=7">Ordered dictionaries</a>
+<ul class="sub-menu depth-0">
+	<li id="menu-item-40" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=7">Introduction</a></li>
+	<li id="menu-item-20" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=11">Naïve solutions</a></li>
+	<li id="menu-item-448" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-448"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=444">Applications</a></li>
+	<li id="menu-item-19" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=13">Binary search tree</a></li>
+	<li id="menu-item-282" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-282"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=261">Balancing trees</a></li>
+	<li id="menu-item-18" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=15">AVL tree</a></li>
+	<li id="menu-item-39" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-39"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=27">2-3 tree</a></li>
+</ul><ul class="submenu depth-0 column-2">	<li id="menu-item-38" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=31">2-3-4 tree</a></li>
+	<li id="menu-item-37" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=34">B-tree</a></li>
+	<li id="menu-item-68" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-68"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=41">Red-black tree</a></li>
+	<li id="menu-item-67" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-67"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=44">AA tree</a></li>
+	<li id="menu-item-66" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-66"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=48">Skiplist</a></li>
+	<li id="menu-item-65" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-65"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=51">Treap</a></li>
+	<li id="menu-item-63" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-63"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=58">Splay tree</a></li>
+	<li id="menu-item-64" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=55">Scapegoat tree</a></li>
+</ul>
+</li>
+<li id="menu-item-21" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21 long-menu"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=9">Priority queues</a>
+<ul class="sub-menu depth-0">
+	<li id="menu-item-113" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-113"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=9">Introduction</a></li>
+	<li id="menu-item-82" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-82"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=69">Naïve solutions</a></li>
+	<li id="menu-item-429" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-429"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=426">Applications</a></li>
+	<li id="menu-item-81" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=72">Heap</a></li>
+	<li id="menu-item-80" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=77">d-ary heap</a></li>
+</ul><ul class="submenu depth-0 column-2">	<li id="menu-item-111" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-111"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=85">Leftist heap</a></li>
+	<li id="menu-item-110" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-110"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=87">Skew heap</a></li>
+	<li id="menu-item-307" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-307"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=303">Pairing heap</a></li>
+	<li id="menu-item-328" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-328"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=310">Binomial heap</a></li>
+	<li id="menu-item-397" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-397"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=377">Lazy binomial heap</a></li>
+	<li id="menu-item-327" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-327"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=320">Fibonacci heap</a></li>
+</ul>
+</li>
+<li id="menu-item-109" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-109 short-menu"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=89">Union-find</a>
+<ul class="sub-menu depth-0">
+	<li id="menu-item-112" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-112"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=89">Introduction</a></li>
+	<li id="menu-item-108" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-108"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=92">Naïve solutions</a></li>
+	<li id="menu-item-107" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-107"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=95">Union find</a></li>
+</ul>
+</li>
+<li id="menu-item-106" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-106 short-menu"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=98">Stringology</a>
+<ul class="sub-menu depth-0">
+	<li id="menu-item-165" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-165"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=98">Introduction</a></li>
+	<li id="menu-item-105" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-105"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=100">Trie</a></li>
+	<li id="menu-item-326" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-326"><a href="https://people.ksp.sk/~kuko/gnarley-trees/?page_id=324">Suffix tree</a></li>
+</ul>
+</li>
+</ul></div>			</div><!-- #access -->
+		</div><!-- #masthead -->
+	</div><!-- #header -->
+
+<!--? //if ($ismobile) { echo "BLAAA BLAAA BLLAAAA\n"; } 
+?-->
+	<div id="main">
+
+
+
+		<div id="container">
+			<div id="content" role="main">
+
+			
+
+				<div id="post-5" class="post-5 page type-page status-publish hentry">
+											<h2 class="entry-title">Introduction</h2>
+					
+					<div class="entry-content">
+						<p><em><strong>Gnarley trees</strong></em> is a project focused on visualization of various tree data structures. <a id="ref-1" class="side-matter side-matter-ref" href="https://people.ksp.sk/~kuko/gnarley-trees/#note-1"></a><a id="ref-2" class="side-matter side-matter-ref" href="https://people.ksp.sk/~kuko/gnarley-trees/#note-2"></a><a id="ref-3" class="side-matter side-matter-ref" href="https://people.ksp.sk/~kuko/gnarley-trees/#note-3"></a> This web site contains visualizations of</p>
+<ul>
+<li>various <strong>balanced trees</strong> such as&nbsp;AVL tree, red-black tree, B-tree, splay tree, treap, skip list, or scapegoat tree,</li>
+<li><strong>priority queues</strong> such as binary heap, leftist heap, skew heap, binomial heap, Fibonacci heap, or pairing heap,</li>
+<li><strong>union find</strong> with&nbsp;various heuristics (union by rank, path compression, path halving, path splitting),</li>
+<li>and <strong>string data structures</strong> such as trie or suffix tree.</li>
+</ul>
+<p>We believe that these visualizations can be used very efficiently as lecture aids. We also hope they will be useful for students for self-study, or simply for exploring various concepts and satisfying curiosity.</p>
+<p>You can use these visualizations either <strong>online</strong> on this site or download a <strong><a href="http://people.ksp.sk/~kuko/gt.jar">standalone application</a>.</strong> (The <code>jar</code> file can be run using the command <code>java -jar gt.jar</code>)</p>
+<h2>Requirements</h2>
+<p>To run the jar file and the applets on this page, you need the <a href="https://www.java.com/en/download/index.jsp">Java Runtime Environment</a>.</p>
+<h2>Feedback and bug reports</h2>
+<p>If you like our visualizations, please write us (to massage our egos). Even more importantly, write us if you have found a bug or have an idea for improvement.<br>
+<strong>e-mail:</strong> <a title="algvis@googlegroups.com" href="mailto://algvis@googlegroups.com">algvis@googlegroups.com</a></p>
+<h2>Translations</h2>
+<p>Gnarley trees are currently available in English and in Slovak. If you would like to contribute a translation into another language, simply download <a title="this" href="https://raw.github.com/kuk0/alg-vis/master/src/Messages_en.properties">this file</a>, translate it, and send it to <a title="algvis@googlegroups.com" href="mailto://algvis@googlegroups.com">algvis@googlegroups.com</a>.</p>
+<h2>Authors</h2>
+<ul>
+<li>Jakub (kuko) Kováč</li>
+<li>Katka Kotrlová</li>
+<li>Pavol (paly) Lukča</li>
+<li>Viktor (friker) Tomkovič</li>
+<li>Tatiana Tóthová</li>
+</ul>
+<h2>Licence</h2>
+<p>Gnarley trees are an <a title="open source" href="http://www.opensource.org/">open source</a>, <a title="free software" href="http://www.gnu.org/philosophy/free-sw.html">free software</a>, and are freely available under the <a title="GNU General Public License, version 3" href="http://www.gnu.org/licenses/gpl-3.0.html">GNU General Public License, version 3</a>. The source code is maintained <a href="https://github.com/kuk0/alg-vis">here</a>.</p>
+																	</div><!-- .entry-content -->
+				</div><!-- #post-## -->
+
+				
+
+			</div><!-- #content -->
+		</div><!-- #container -->
+
+
+		<div id="primary" class="widget-area" role="complementary">
+			<ul class="xoxo">
+
+<li id="side-matter-2" class="widget-container widget_side_matter side-matter"><h3 class="widget-title"></h3>			<ol class="side-matter side-matter-list" style="list-style-type: none;">
+							<li id="note-1" class="side-matter side-matter-note" style="margin-top: 123px;">
+					<div class="side-matter side-matter-text">
+						<p><em>Gnarl</em> – a knot in wood</p>
+					</div>
+				</li>
+								<li id="note-2" class="side-matter side-matter-note" style="margin-top: 0px;">
+					<div class="side-matter side-matter-text">
+						<p>Thy sharpe and sulpherous bolt Splits the vn-wedgable and gnarled Oke.<br>Shakespeare, W. (1603). <em>Measure for measure,</em> Act II, Scene II.</p>
+					</div>
+				</li>
+								<li id="note-3" class="side-matter side-matter-note" style="margin-top: 0px;">
+					<div class="side-matter side-matter-text">
+						<p><em>Gnarley</em> – 1970s surfer slang for rad, exceptional, or cool; a step above intense (can be positive or negative), see <a href="http://www.urbandictionary.com/define.php?term=gnarley">urban dictionary</a></p>
+					</div>
+				</li>
+							</ol>
+			</li>			</ul>
+		</div><!-- #primary .widget-area -->
+
+	</div><!-- #main -->
+
+	<!--div id="footer" role="contentinfo">
+		<div id="colophon">
+
+
+	
+		</div><!- #colophon ->
+	</div><!- #footer -->
+
+</div><!-- #wrapper -->
+
+<script type="text/javascript">
+/* <![CDATA[ */
+var side_matter = {"is_responsive":"1","use_effects":"0","note_adjust":"-2","html_class":"side-matter"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Gnarley trees _ visualization of algorithms and data structures_files/side-matter.js"></script>
+
+
+</body></html>

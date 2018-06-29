@@ -1,0 +1,30 @@
+/*
+side-matter.css
+Version 1.3
+
+Plugin: Side Matter
+Author: Christopher Setzer
+URI: http://wordpress.org/extend/plugins/side-matter/
+License: GPLv2
+*/
+
+/*
+Since version 0.9, Side Matter's options menu has featured a color picker for setting note text and figures in custom colors. For many users, this will obviate the need to modify element styles using `side-matter.css` or a custom CSS plugin. However, a guide to further styling Side Matter elements with CSS may be found in `readme.txt` and online at <http://wordpress.org/extend/plugins/side-matter/other_notes/>.
+
+The below is default Side Matter CSS. These rules have low specificity, and are easily superseded by theme or user CSS.
+*/
+
+a.side-matter-ref:link,
+a.side-matter-ref:visited,
+a.side-matter-ref:hover,
+a.side-matter-ref:active {
+	text-decoration: none;
+}
+
+sup.side-matter-sup {
+	position: relative;
+	top: -0.5em;
+	vertical-align: baseline;
+	font-size: 0.75em;
+	line-height: 0;
+}
